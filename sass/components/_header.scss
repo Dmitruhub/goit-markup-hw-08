@@ -1,0 +1,128 @@
+/*            header            */
+
+.header {
+  background-color: var(--primery-bg-color);
+  border-bottom: 1px solid var(--border-hed-color);
+}
+
+.main-list {
+  display: flex;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.contacts-list {
+  display: flex;
+  .contacts-list_item + .contacts-list_item {
+    margin-left: 50px;
+  }
+}
+
+.nav-list .nav-list_item + .nav-list_item {
+  margin-left: 50px;
+}
+
+.nav_logo {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  margin-right: 93px;
+  color: var(--accennt-color);
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+
+.logo--color-dark {
+  color: var(--title-text-color);
+}
+
+.nav-list_link.current,
+.nav-list_link:hover,
+.nav-list_link:focus {
+  color: var(--accennt-color);
+}
+
+.nav-list_link {
+  position: relative;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--title-text-color);
+  @include transition(color, null, null, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+  .nav-list &:after {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    content: " ";
+    width: 100%;
+    height: 4px;
+    opacity: 0;
+    color: var(--accennt-color);
+    background-color: var(--accennt-color);
+    border-radius: 2px;
+    @include transition(
+      null,
+      opacity,
+      null,
+      250ms,
+      cubic-bezier(0.4, 0, 0.2, 1)
+    );
+  }
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+  }
+}
+
+.link.current:after {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  content: " ";
+  width: 100%;
+  height: 4px;
+  color: var(--accennt-color);
+  background-color: var(--accennt-color);
+  border-radius: 2px;
+  opacity: 1;
+}
+
+.main-list_contacts {
+  margin-left: auto;
+}
+
+.contacts-list_mail,
+.contacts-list_tel {
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: var(--header-list-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  @include transition(color, null, null, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+  &:hover,
+  &:focus {
+    color: var(--accennt-color);
+  }
+}
+
+.contacts-icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
