@@ -7,14 +7,24 @@
 
 .main-list {
   display: flex;
+  @media screen and (max-width: 768px) {
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .nav {
   display: flex;
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
 }
 
 .nav-list {
   display: flex;
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
 }
 
 .contacts-list {
@@ -32,13 +42,45 @@
   display: block;
   padding-top: 24px;
   padding-bottom: 25px;
-  margin-right: 93px;
+  margin: 0;
   color: var(--accennt-color);
   font-family: "Raleway";
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  @media screen and (min-width: 768px) {
+    margin-right: 93px;
+  }
+  @media screen and (max-width: 1199px) {
+    font-size: 24px;
+    line-height: 1.17;
+  }
+}
+
+.menu-open-btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  background-color: transparent;
+  border: transparent;
+  color: var(--menu-openicon-color);
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: var(--accennt-color);
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.open-menuicon {
+  fill: currentColor;
 }
 
 .logo--color-dark {
@@ -87,7 +129,7 @@
   }
 }
 
-.link.current:after {
+.nav-list_link.current:after {
   position: absolute;
   bottom: 0;
   display: block;
@@ -102,6 +144,9 @@
 
 .main-list_contacts {
   margin-left: auto;
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
 }
 
 .contacts-list_mail,
@@ -125,4 +170,160 @@
 .contacts-icon {
   margin-right: 10px;
   fill: currentColor;
+}
+
+.mob-menu {
+  position: fixed;
+  background-color: var(--primery-bg-color);
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.menu-close-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: transparent;
+  background-color: var(--primery-bg-color);
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: var(--title-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: var(--accennt-color);
+  }
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  overflow: auto;
+}
+
+.modal-icon {
+  fill: currentColor;
+}
+
+.mob-menu-list {
+  margin-bottom: 30px;
+}
+
+.list {
+}
+.mob-menu-item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mob-menu-link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  color: var(--title-text-color);
+  @media screen and (max-width: 480px) {
+    font-size: 36px;
+  }
+}
+
+.mob-menu-link.current,
+.mob-menu-link:hover,
+.mob-menu-link:focus {
+  color: var(--accennt-color);
+}
+
+.mob-menu-contacts {
+}
+
+.mob-menu-contacts-list {
+  margin-bottom: 64px;
+}
+.mob-menu-contacts-item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mob-menu-contacts-mail {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: var(--header-list-color);
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+  }
+}
+
+.contacts-icon {
+}
+
+.mob-menu-contacts-tel {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  color: var(--accennt-color);
+  @media screen and (max-width: 480px) {
+    font-size: 26px;
+  }
+}
+
+.mob-menu-soc-list {
+  display: flex;
+}
+
+.mob-menu-soc-item {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.mob-menu-soc-link {
+  position: relative;
+  display: block;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: var(--accennt-color);
+  padding-right: 10px;
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+  }
+}
+
+.mob-menu-soc-link:after {
+  position: absolute;
+  background-color: var(--border-textarea-color);
+  content: " ";
+  width: 22px;
+  height: 0;
+  border: 1px solid var(--border-textarea-color);
+  transform: rotate(90deg);
+  top: 50%;
+}
+
+.mob-menu-soc-link.last:after {
+  display: none;
 }

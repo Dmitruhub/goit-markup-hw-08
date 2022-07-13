@@ -2,6 +2,9 @@
 .worktypes {
   padding-bottom: 94px;
   background-color: var(--primery-bg-color);
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
 }
 .worktypes-title {
   margin-top: 0;
@@ -16,9 +19,7 @@
 
 .worktypes-list {
   display: flex;
-  .worktypes-item + .worktypes-item {
-    margin-left: 30px;
-  }
+  gap: 30px;
 }
 
 .worktypes-photo {

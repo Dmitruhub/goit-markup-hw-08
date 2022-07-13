@@ -1,32 +1,46 @@
 /*            steady clients            */
 .clients {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   margin-top: 0;
   margin-bottom: 0;
   background-color: var(--primery-bg-color);
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .clients-title {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   color: var(--title-text-color);
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
+  font-size: 28px;
+  line-height: 1.18;
   text-align: center;
   letter-spacing: 0.03em;
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+    font-size: 36px;
+    line-height: 1.17;
+  }
 }
 
 .menu-list {
   display: flex;
-  .menu-list_item + .menu-list_item {
-    margin-left: 30px;
-  }
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .menu-list_item {
-  width: 170px;
   height: 92px;
+  width: calc((100% - 30px) / 2);
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 60px) / 3);
+  }
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 150px) / 6);
+  }
 }
 
 .menu-list_Logo-link {
