@@ -78,15 +78,14 @@
   }
 }
 
-.address-item:first-child {
-  margin-top: 0;
-  margin-bottom: 9px;
-}
-
 .address-item {
   text-align: center;
   @media screen and (min-width: 1200px) {
     text-align: start;
+  }
+  &:first-child {
+    margin-top: 0;
+    margin-bottom: 9px;
   }
 }
 

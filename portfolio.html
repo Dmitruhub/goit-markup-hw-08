@@ -31,12 +31,10 @@
           >
           <ul class="nav-list list">
             <li class="nav-list_item">
-              <a href="/index.html" class="nav-list_link link">Студия</a>
+              <a href="./index.html" class="nav-list_link link">Студия</a>
             </li>
             <li class="nav-list_item">
-              <a href="./portfolio.html" class="nav-list_link link current"
-                >Портфолио</a
-              >
+              <a href="" class="nav-list_link link current">Портфолио</a>
             </li>
             <li class="nav-list_item">
               <a href="" class="nav-list_link link">Контакты</a>
@@ -47,7 +45,7 @@
           <ul class="contacts-list list">
             <li class="contacts-list_item">
               <a href="" class="contacts-list_mail link">
-                <svg class="contacts-icon" width="16" height="12">
+                <svg class="contacts-icon contacts-icon--envelope">
                   <use href="./img/icons.svg#icon-envelope"></use>
                 </svg>
                 info@devstudio.com</a
@@ -55,12 +53,67 @@
             </li>
             <li class="contacts-list_item">
               <a href="" class="contacts-list_tel link"
-                ><svg class="contacts-icon" width="10" height="16">
+                ><svg class="contacts-icon contacts-icon--smartphone">
                   <use href="./img/icons.svg#icon-smartphone"></use></svg
                 >+38 096 111 11 11</a
               >
             </li>
           </ul>
+        </div>
+        <button type="button" class="menu-open-btn">
+          <svg class="open-menu-icon" width="40" height="40">
+            <use href="./img/icons.svg#icon-menu_24px"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="mob-menu is-hidden">
+        <div class="menu-container">
+          <button type="button" class="menu-close-btn">
+            <svg class="menu-icon" width="40" height="40">
+              <use href="./img/icons.svg#icon-close-black1"></use>
+            </svg>
+          </button>
+          <ul class="mob-menu-list list">
+            <li class="mob-menu-item">
+              <a href="" class="mob-menu-link link current">Студия</a>
+            </li>
+            <li class="mob-menu-item">
+              <a href="./portfolio.html" class="mob-menu-link link"
+                >Портфолио</a
+              >
+            </li>
+            <li class="mob-menu-item">
+              <a href="" class="mob-menu-link link">Контакты</a>
+            </li>
+          </ul>
+          <div class="mob-menu-contacts">
+            <ul class="mob-menu-contacts-list list">
+              <li class="mob-menu-contacts-item">
+                <a href="" class="mob-menu-contacts-tel link">
+                  +38 096 111 11 11</a
+                >
+              </li>
+              <li class="mob-menu-contacts-item">
+                <a href="" class="mob-menu-contacts-mail link">
+                  info@devstudio.com</a
+                >
+              </li>
+            </ul>
+            <ul class="mob-menu-soc-list list">
+              <li class="mob-menu-soc-item">
+                <a href="" class="mob-menu-soc-link link">Instagram </a>
+              </li>
+              <li class="mob-menu-soc-item">
+                <a href="" class="mob-menu-soc-link link">Twitter </a>
+              </li>
+              <li class="mob-menu-soc-item">
+                <a href="" class="mob-menu-soc-link link">Facebook </a>
+              </li>
+              <li class="mob-menu-soc-item">
+                <a href="" class="mob-menu-soc-link last link">Linkedin </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
@@ -94,12 +147,34 @@
             <li class="portfolio-item">
               <a href="" class="portfolio-link link">
                 <div class="relative-photo">
-                  <img
-                    class="photo"
-                    src="./img/work-example-1.jpg"
-                    alt="Пример веб-сайта"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./img/work-example-1.jpg    1x,
+                        ./img/work-example-1@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-1-tab.jpg    1x,
+                        ./img/work-example-1-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-1-mob.jpg    1x,
+                        ./img/work-example-1-mob@2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="photo"
+                      src="./img/work-example-1-mob.jpg"
+                      alt="Пример веб-сайта"
+                    />
+                  </picture>
                   <p class="overlay-text">
                     Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и сервисов. Все это позволит посетителю получить
@@ -121,12 +196,34 @@
             <li class="portfolio-item">
               <a href="" class="portfolio-link link">
                 <div class="relative-photo">
-                  <img
-                    class="photo"
-                    src="./img/work-example-2.jpg"
-                    alt="Пример дизайна"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./img/work-example-2.jpg    1x,
+                        ./img/work-example-2@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-2-tab.jpg    1x,
+                        ./img/work-example-2-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-2-mob.jpg    1x,
+                        ./img/work-example-2-mob@2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="photo"
+                      src="./img/work-example-2-mob.jpg"
+                      alt="Пример дизайна"
+                    />
+                  </picture>
                   <p class="overlay-text">
                     Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и сервисов. Все это позволит посетителю получить
@@ -150,12 +247,34 @@
             <li class="portfolio-item">
               <a href="" class="portfolio-link link">
                 <div class="relative-photo">
-                  <img
-                    class="photo"
-                    src="./img/work-example-3.jpg"
-                    alt="Пример приложения"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./img/work-example-3.jpg    1x,
+                        ./img/work-example-3@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-3-tab.jpg    1x,
+                        ./img/work-example-3-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-3-mob.jpg    1x,
+                        ./img/work-example-3-mob@2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="photo"
+                      src="./img/work-example-3-mob.jpg"
+                      alt="Пример приложения"
+                    />
+                  </picture>
                   <p class="overlay-text">
                     Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и сервисов. Все это позволит посетителю получить
@@ -179,12 +298,34 @@
             <li class="portfolio-item">
               <a href="" class="portfolio-link link">
                 <div class="relative-photo">
-                  <img
-                    class="photo"
-                    src="./img/work-example-4.jpg"
-                    alt="Пример маркетинга"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./img/work-example-4.jpg    1x,
+                        ./img/work-example-4@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-4-tab.jpg    1x,
+                        ./img/work-example-4-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-4-mob.jpg    1x,
+                        ./img/work-example-4-mob@2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="photo"
+                      src="./img/work-example-4-mob.jpg"
+                      alt="Пример маркетинга"
+                    />
+                  </picture>
                   <p class="overlay-text">
                     Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и сервисов. Все это позволит посетителю получить
@@ -202,12 +343,34 @@
             <li class="portfolio-item">
               <a href="" class="portfolio-link link">
                 <div class="relative-photo">
-                  <img
-                    class="photo"
-                    src="./img/work-example-5.jpg"
-                    alt="Пример приложения"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./img/work-example-5.jpg    1x,
+                        ./img/work-example-5@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-5-tab.jpg    1x,
+                        ./img/work-example-5-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-5-mob.jpg    1x,
+                        ./img/work-example-5-mob@2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="photo"
+                      src="./img/work-example-5-mob.jpg"
+                      alt="Пример приложения"
+                    />
+                  </picture>
                   <p class="overlay-text">
                     Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и сервисов. Все это позволит посетителю получить
@@ -225,12 +388,34 @@
             <li class="portfolio-item">
               <a href="" class="portfolio-link link">
                 <div class="relative-photo">
-                  <img
-                    class="photo"
-                    src="./img/work-example-6.jpg"
-                    alt="Пример веб-сайта"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./img/work-example-6.jpg    1x,
+                        ./img/work-example-6@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-6-tab.jpg    1x,
+                        ./img/work-example-6-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-6-mob.jpg    1x,
+                        ./img/work-example-6-mob@2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="photo"
+                      src="./img/work-example-6-mob.jpg"
+                      alt="Пример веб-сайта"
+                    />
+                  </picture>
                   <p class="overlay-text">
                     Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и сервисов. Все это позволит посетителю получить
@@ -248,12 +433,34 @@
             <li class="portfolio-item">
               <a href="" class="portfolio-link link">
                 <div class="relative-photo">
-                  <img
-                    class="photo"
-                    src="./img/work-example-7.jpg"
-                    alt="Пример дизайна"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./img/work-example-7.jpg    1x,
+                        ./img/work-example-7@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-7-tab.jpg    1x,
+                        ./img/work-example-7-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-7-mob.jpg    1x,
+                        ./img/work-example-7-mob@2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="photo"
+                      src="./img/work-example-7-mob.jpg"
+                      alt="Пример дизайна"
+                    />
+                  </picture>
                   <p class="overlay-text">
                     Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и сервисов. Все это позволит посетителю получить
@@ -271,12 +478,34 @@
             <li class="portfolio-item">
               <a href="" class="portfolio-link link">
                 <div class="relative-photo">
-                  <img
-                    class="photo"
-                    src="./img/work-example-8.jpg"
-                    alt="Пример маркетинга"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./img/work-example-8.jpg    1x,
+                        ./img/work-example-8@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-8-tab.jpg    1x,
+                        ./img/work-example-8-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-8-mob.jpg    1x,
+                        ./img/work-example-8-mob@2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="photo"
+                      src="./img/work-example-8-mob.jpg"
+                      alt="Пример маркетинга"
+                    />
+                  </picture>
                   <p class="overlay-text">
                     Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и сервисов. Все это позволит посетителю получить
@@ -294,12 +523,34 @@
             <li class="portfolio-item">
               <a href="" class="portfolio-link link">
                 <div class="relative-photo">
-                  <img
-                    class="photo"
-                    src="./img/work-example-9.jpg"
-                    alt="Пример приложения"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./img/work-example-9.jpg    1x,
+                        ./img/work-example-9@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-9-tab.jpg    1x,
+                        ./img/work-example-9-tab@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./img/work-example-9-mob.jpg    1x,
+                        ./img/work-example-9-mob@2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="photo"
+                      src="./img/work-example-9-mob.jpg"
+                      alt="Пример приложения"
+                    />
+                  </picture>
                   <p class="overlay-text">
                     Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и сервисов. Все это позволит посетителю получить
@@ -319,11 +570,13 @@
 
     <!--Подвал-->
     <footer class="footer">
-      <div class="footer-container">
+      <div class="container base">
         <div class="footer-address">
-          <a lang="en" href="" class="footer-logo link"
-            >Web<span class="logo logo--color-light">Studio</span></a
-          >
+          <div class="footerlogo-base">
+            <a lang="en" href="" class="footer-logo link"
+              >Web<span class="logo logo--color-light">Studio</span></a
+            >
+          </div>
           <address class="address">
             <p class="address-text">г. Киев, пр-т Леси Украинки, 26</p>
             <ul class="address-list list">
@@ -390,5 +643,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

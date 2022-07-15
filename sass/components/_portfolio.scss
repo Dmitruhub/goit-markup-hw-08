@@ -1,14 +1,23 @@
 /*               portfolio               */
 .portfolio {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .portfoliobutton-list {
   display: flex;
-  margin-bottom: 50px;
-  justify-content: center;
-  gap: 8px;
+  justify-content: left;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  gap: 15px 8px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 50px;
+    justify-content: center;
+  }
 }
 
 .portfolio-list {
@@ -18,12 +27,18 @@
 }
 
 .portfolio-item {
-  width: calc((100% - 60px) / 3);
-  &:nth-child(3n) {
-    margin-right: 0;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 30px) / 2);
   }
-  &:nth-last-child(-n + 3) {
-    margin-bottom: 0;
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 60px) / 3);
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &:nth-last-child(-n + 3) {
+      margin-bottom: 0;
+    }
   }
 }
 

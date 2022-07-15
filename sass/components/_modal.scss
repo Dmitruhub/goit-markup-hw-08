@@ -8,25 +8,41 @@
   height: 100%;
   background-color: var(--modal-color);
   transition: opacity 300ms linear, visibility 300ms linear;
-}
-
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0);
+  &.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+  }
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  width: 528px;
-  min-height: 581px;
   padding: 40px;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(1);
   background-color: var(--primery-bg-color);
   border-radius: 4px;
   box-shadow: 0px 1px 3px var(--portfoliobutton-shadow-three),
     0px 1px 1px var(--box-shadow-two), 0px 2px 1px var(--modal-color);
   transition: transform 300ms linear;
+  @media screen and (min-width: 468px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 450px;
+    padding: 40px;
+    height: 609px;
+  }
+  @media screen and (min-width: 1200px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 528px;
+    min-height: 581px;
+    padding: 40px;
+  }
 }
 
 .modal-button-close {
@@ -41,6 +57,7 @@
   position: absolute;
   top: 8px;
   right: 8px;
+  cursor: pointer;
 }
 
 .modal-icon {
@@ -98,6 +115,7 @@
   &:hover {
     border-color: var(--accennt-color);
   }
+  cursor: pointer;
 }
 
 .modal-button {
@@ -160,6 +178,7 @@
     letter-spacing: 0.01em;
     color: var(--modal-text-color);
   }
+  cursor: pointer;
 }
 
 .consent-field {
@@ -195,10 +214,18 @@
   align-items: center;
   justify-content: center;
   font-weight: 400;
-  font-size: 14px;
-  line-height: calc(24 / 14);
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--header-list-color);
+  @media screen and (max-width: 468px) {
+    font-size: 10px;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: calc(24 / 14);
+  }
 }
 
 .consent-icon {
@@ -207,8 +234,9 @@
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   .consent-input:checked + .consent-label & {
-  fill: var(--primery-bg-color);
-}
+    fill: var(--primery-bg-color);
+  }
+  cursor: pointer;
 }
 
 .accent-link {
