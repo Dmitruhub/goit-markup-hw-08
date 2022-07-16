@@ -70,7 +70,9 @@
 }
 
 .portfolio-link {
-  display: block;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -132,6 +134,7 @@
 }
 
 .portfolio-bottom {
+  flex-grow: 1;
   padding: 20px 24px;
   border: 1px solid var(--border-color);
 }
